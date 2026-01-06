@@ -18,6 +18,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application code
 COPY main.py .
 
+COPY train.py .
+RUN python train.py
+
 # Copy model artifacts at build time OR runtime
 # (See deployment notes below)
 COPY best_model.pkl .
